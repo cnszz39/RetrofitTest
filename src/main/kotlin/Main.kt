@@ -6,4 +6,9 @@ fun main(args: Array<String>) {
             println(article)
         }
     }
+//    loader.getBanner().subscribe {
+//        for (banner in it) {
+//            println(banner)
+//        }
+//    }
 }

@@ -2,7 +2,16 @@ package model
 
 data class BaseResponse<T>(val errorCode: Int,
                            val errorMsg: String,
-                           val data: model.Article<T>)
+                           val data: List<T>)
+
+data class Banner(val desc: String,
+                  val id: Int,
+                  val imagePath: String,
+                  val isVisible: Int,
+                  val order: Int,
+                  val title: String,
+                  val type: Int,
+                  val url: String)
 
 data class Article<T>(val curPage: Int,
                       val offset: Int,
