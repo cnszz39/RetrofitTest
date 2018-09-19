@@ -7,7 +7,7 @@ class WanAndroidLoader {
 
     private val mService = RetrofitServiceManager().getInstance().create(IWanAndroidBiz::class.java)
 
-    fun getArticle(pageCount: Int): Observable<List<Article<Article.ArticleBody>>> {
+    fun getArticle(pageCount: Int): Observable<Article<Article.ArticleBody>> {
         return mService.getArticle(pageCount).map{
             it.data
         }

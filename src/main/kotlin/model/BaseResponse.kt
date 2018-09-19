@@ -1,6 +1,10 @@
 package model
 
-data class BaseResponse<T>(val errorCode: Int,
+data class BaseResponseSingleData<T>(val errorCode: Int,
+                                   val errorMsg: String,
+                                   val data: T)
+
+data class BaseResponseListData<T>(val errorCode: Int,
                            val errorMsg: String,
                            val data: List<T>)
 
