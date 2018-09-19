@@ -1,6 +1,7 @@
 import io.reactivex.Observable
 import model.Article
 import model.Banner
+import model.Friend
 import services.IWanAndroidBiz
 
 class WanAndroidLoader {
@@ -15,6 +16,12 @@ class WanAndroidLoader {
 
     fun getBanner(): Observable<List<Banner>> {
         return mService.getBanner().map{
+            it.data
+        }
+    }
+
+    fun getFriend() : Observable<List<Friend>> {
+        return mService.getFriend().map{
             it.data
         }
     }

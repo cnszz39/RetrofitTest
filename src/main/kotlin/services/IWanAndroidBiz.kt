@@ -1,10 +1,7 @@
 package services
 
 import io.reactivex.Observable
-import model.Article
-import model.Banner
-import model.BaseResponseListData
-import model.BaseResponseSingleData
+import model.*
 import retrofit2.http.GET
 import retrofit2.http.Path
 
@@ -15,4 +12,7 @@ interface IWanAndroidBiz {
 
     @GET("banner/json")
     fun getBanner():Observable<BaseResponseListData<Banner>>
+
+    @GET("friend/json")
+    fun getFriend() :Observable<BaseResponseListData<Friend>>
 }

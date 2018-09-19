@@ -7,9 +7,16 @@ fun main(args: Array<String>) {
             println(article)
         }
     }
+
     loader.getBanner().subscribe {
         for (banner in it) {
             println(banner)
+        }
+    }
+
+    loader.getFriend().subscribe {
+        for(friend in it) {
+            println(friend)
         }
     }
 }
