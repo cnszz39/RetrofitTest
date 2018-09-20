@@ -1,6 +1,7 @@
+package services
+
 import io.reactivex.Observable
 import model.*
-import services.IWanAndroidBiz
 
 class WanAndroidLoader {
 

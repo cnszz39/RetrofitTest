@@ -1,3 +1,5 @@
+import services.WanAndroidLoader
+
 fun main(args: Array<String>) {
 
     val loader = WanAndroidLoader()
