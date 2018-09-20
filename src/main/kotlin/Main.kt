@@ -34,9 +34,22 @@ fun main(args: Array<String>) {
 //        }
 //    }
 
-    loader.getNavi().subscribe(){
-        for(navi in it) {
-            println(navi)
+//    loader.getNavi().subscribe(){
+//        for(navi in it) {
+//            println(navi)
+//        }
+//    }
+
+//    loader.getProjectType().subscribe(){
+//        for(projectType in it) {
+//            println(projectType)
+//        }
+//    }
+
+    loader.getProject(1,294).subscribe(){
+        for(project in it.datas) {
+            println(project)
         }
     }
+
 }

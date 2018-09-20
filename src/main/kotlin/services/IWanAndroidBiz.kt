@@ -27,5 +27,11 @@ interface IWanAndroidBiz {
     fun getTreeChildren(): Observable<BaseResponseListData<TreeChildren>>
 
     @GET("navi/json")
-    fun getNavi():Observable<BaseResponseListData<Navi>>
+    fun getNavi(): Observable<BaseResponseListData<Navi>>
+
+    @GET("project/tree/json")
+    fun getProjectType(): Observable<BaseResponseListData<ProjectType>>
+
+    @GET("project/list/{page}/json")
+    fun getProject(@Path("page") page: Int, @Query("cid") cid: Int): Observable<BaseResponseSingleData<Article<Article.ArticleBody>>>
 }
