@@ -2,21 +2,39 @@ fun main(args: Array<String>) {
 
     val loader = WanAndroidLoader()
 
-    loader.getArticle(1).subscribe {
-        for(article in it.datas) {
-            println(article)
-        }
-    }
+//    loader.getArticle(1,60).subscribe {
+//        for(article in it.datas) {
+//            println(article)
+//        }
+//    }
+//
+//    loader.getBanner().subscribe {
+//        for (banner in it) {
+//            println(banner)
+//        }
+//    }
+//
+//    loader.getFriend().subscribe {
+//        for(friend in it) {
+//            println(friend)
+//        }
+//    }
+//
+//    loader.getHotkey().subscribe {
+//        for (hotkey in it) {
+//            println(hotkey)
+//        }
+//    }
 
-    loader.getBanner().subscribe {
-        for (banner in it) {
-            println(banner)
-        }
-    }
+//    loader.getTree().subscribe(){
+//        for(treeChildren in it) {
+//            println(treeChildren)
+//        }
+//    }
 
-    loader.getFriend().subscribe {
-        for(friend in it) {
-            println(friend)
+    loader.getNavi().subscribe(){
+        for(navi in it) {
+            println(navi)
         }
     }
 }

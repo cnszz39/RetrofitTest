@@ -1,12 +1,12 @@
 package model
 
 data class BaseResponseSingleData<T>(val errorCode: Int,
-                                   val errorMsg: String,
-                                   val data: T)
+                                     val errorMsg: String,
+                                     val data: T)
 
 data class BaseResponseListData<T>(val errorCode: Int,
-                           val errorMsg: String,
-                           val data: List<T>)
+                                   val errorMsg: String,
+                                   val data: List<T>)
 
 data class Banner(val desc: String,
                   val id: Int,
@@ -51,9 +51,27 @@ data class Article<T>(val curPage: Int,
     }
 }
 
-data class Friend(val icon:String,
-                  val id:Int,
-                  val link:String,
-                  val name:String,
-                  val order:Int,
+data class Friend(val icon: String,
+                  val id: Int,
+                  val link: String,
+                  val name: String,
+                  val order: Int,
                   val visible: Int)
+
+data class Hotkey(val id: Int,
+                  val link: String,
+                  val name: String,
+                  val order: Int,
+                  val visible: Int)
+
+data class TreeChildren(val courseId: Int,
+                        val id: Int,
+                        val name: String,
+                        val order: Int,
+                        val parentChapterId: Int,
+                        val visible: Int,
+                        val children: List<TreeChildren>)
+
+data class Navi(val articles: List<Article.ArticleBody>,
+                val cid: Int,
+                val name: String)

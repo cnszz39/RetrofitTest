@@ -1,7 +1,5 @@
 import io.reactivex.Observable
-import model.Article
-import model.Banner
-import model.Friend
+import model.*
 import services.IWanAndroidBiz
 
 class WanAndroidLoader {
@@ -14,6 +12,12 @@ class WanAndroidLoader {
         }
     }
 
+    fun getArticle(pageCount: Int, cid:Int): Observable<Article<Article.ArticleBody>> {
+        return mService.getArticle(pageCount, cid).map{
+            it.data
+        }
+    }
+
     fun getBanner(): Observable<List<Banner>> {
         return mService.getBanner().map{
             it.data
@@ -22,6 +26,24 @@ class WanAndroidLoader {
 
     fun getFriend() : Observable<List<Friend>> {
         return mService.getFriend().map{
+            it.data
+        }
+    }
+
+    fun getHotkey() : Observable<List<Hotkey>> {
+        return mService.getHotkey().map {
+            it.data
+        }
+    }
+
+    fun getTree() : Observable<List<TreeChildren>> {
+        return mService.getTreeChildren().map {
+            it.data
+        }
+    }
+
+    fun getNavi():Observable<List<Navi>> {
+        return mService.getNavi().map {
             it.data
         }
     }
