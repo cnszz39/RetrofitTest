@@ -13,10 +13,14 @@ class WanAndroidLoader {
         }
     }
 
+//    fun getArticle(pageCount: Int, cid: Int): Observable<Article<Article.ArticleBody>> {
+//        return mService.getArticle(pageCount, cid).map {
+//            it.data
+//        }
+//    }
+
     fun getArticle(pageCount: Int, cid: Int): Observable<Article<Article.ArticleBody>> {
-        return mService.getArticle(pageCount, cid).map {
-            it.data
-        }
+        return mService.getArticle(pageCount, cid).map(PayLoad())
     }
 
     fun getBanner(): Observable<List<Banner>> {
@@ -59,6 +63,16 @@ class WanAndroidLoader {
         return mService.getProject(pageCount, cid).map {
             it.data
         }
+    }
+
+    fun postSearch(pageCount: Int, keyWord:String):Observable<Article<Article.ArticleBody>> {
+        return mService.postSearch(pageCount, keyWord).map {
+            it.data
+        }
+    }
+
+    fun getCollect(pageCount: Int):Observable<Article<Article.ArticleBody>> {
+        return mService.getCollection(pageCount).map(PayLoad())
     }
 
 }

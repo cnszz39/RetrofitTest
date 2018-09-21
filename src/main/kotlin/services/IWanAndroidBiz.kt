@@ -3,6 +3,7 @@ package services
 import io.reactivex.Observable
 import model.*
 import retrofit2.http.GET
+import retrofit2.http.POST
 import retrofit2.http.Path
 import retrofit2.http.Query
 
@@ -34,4 +35,10 @@ interface IWanAndroidBiz {
 
     @GET("project/list/{page}/json")
     fun getProject(@Path("page") page: Int, @Query("cid") cid: Int): Observable<BaseResponseSingleData<Article<Article.ArticleBody>>>
+
+    @POST("article/query/{page}/json")
+    fun postSearch(@Path("page") page: Int, @Query("k") keyWord: String): Observable<BaseResponseSingleData<Article<Article.ArticleBody>>>
+
+    @GET("lg/collect/list/{page}/json")
+    fun getCollection(@Path("page") page: Int): Observable<BaseResponseSingleData<Article<Article.ArticleBody>>>
 }

@@ -1,10 +1,10 @@
 package model
 
-data class BaseResponseSingleData<T>(val errorCode: Int,
-                                     val errorMsg: String,
-                                     val data: T)
+data class BaseResponseSingleData<out T>(val errorCode: Int,
+                                         val errorMsg: String,
+                                         val data: T)
 
-data class BaseResponseListData<T>(val errorCode: Int,
+data class BaseResponseListData<out T>(val errorCode: Int,
                                    val errorMsg: String,
                                    val data: List<T>)
 
@@ -17,13 +17,13 @@ data class Banner(val desc: String,
                   val type: Int,
                   val url: String)
 
-data class Article<T>(val curPage: Int,
-                      val offset: Int,
-                      val over: Boolean,
-                      val pageCount: Int,
-                      val size: Int,
-                      val total: Int,
-                      val datas: List<T>) {
+data class Article<out T>(val curPage: Int,
+                          val offset: Int,
+                          val over: Boolean,
+                          val pageCount: Int,
+                          val size: Int,
+                          val total: Int,
+                          val datas: List<T>) {
     data class ArticleBody(val apkLink: String,
                            val author: String,
                            val chapterId: Int,
