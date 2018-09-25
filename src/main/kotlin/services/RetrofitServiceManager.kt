@@ -28,8 +28,10 @@ class RetrofitServiceManager {
         builder.readTimeout(DEFAULT_READ_TIME_OUT, TimeUnit.SECONDS)
 
         val logger = HttpLoggingInterceptor()
-        logger.level = HttpLoggingInterceptor.Level.BASIC
+        logger.level = HttpLoggingInterceptor.Level.HEADERS
         builder.addInterceptor(logger)
+
+        builder.addInterceptor(AddCookiesInterceptor())
 
         retrofit = Retrofit.Builder()
                 .baseUrl("http://www.wanandroid.com")

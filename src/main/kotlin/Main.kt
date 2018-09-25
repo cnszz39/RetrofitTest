@@ -5,7 +5,20 @@ fun main(args: Array<String>) {
 
     val loader = WanAndroidLoader()
 
-    loader.getCollect(20000).subscribe(
+//    loader.getArticle(1).subscribe(
+//            {
+//                for (article in it.datas) {
+//                    println(article)
+//                }
+//            },
+//            {
+//                val fault = it as Fault
+//                println(fault.errorCode.toString() + fault.errorMessage)
+//            }
+//    )
+
+
+    loader.getCollect(0).subscribe(
             {
                 for (article in it.datas) {
                     println(article)
@@ -13,7 +26,7 @@ fun main(args: Array<String>) {
             },
             {
                 val fault = it as Fault
-                println(fault.errorMessage)
+                println(fault.errorCode.toString() + fault.errorMessage)
             }
     )
 
