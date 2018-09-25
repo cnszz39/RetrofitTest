@@ -5,8 +5,8 @@ data class BaseResponseSingleData<out T>(val errorCode: Int,
                                          val data: T)
 
 data class BaseResponseListData<out T>(val errorCode: Int,
-                                   val errorMsg: String,
-                                   val data: List<T>)
+                                       val errorMsg: String,
+                                       val data: List<T>)
 
 data class Banner(val desc: String,
                   val id: Int,
@@ -82,3 +82,23 @@ data class ProjectType(val courseId: Int,
                        val order: Int,
                        val parentChapterId: Int,
                        val visible: Int)
+
+data class TodoData(val doneList: List<Todo>,
+                    val todoList: List<Todo>,
+                    val type: Int) {
+
+    data class Todo(val date: Long,
+                    val todoList: List<TodoChild>) {
+        
+        data class TodoChild(val completeDate: Long,
+                             val completeDateStr: String,
+                             val content: String,
+                             val date: Long,
+                             val dateStr: String,
+                             val id: Int,
+                             val status: Int,
+                             val title: String,
+                             val type: Int,
+                             val userId: Int)
+    }
+}

@@ -17,17 +17,26 @@ fun main(args: Array<String>) {
 //            }
 //    )
 
+//    loader.getCollect(0).subscribe(
+//            {
+//                for (article in it.datas) {
+//                    println(article)
+//                }
+//            },
+//            {
+//                val fault = it as Fault
+//                println(fault.errorCode.toString() + fault.errorMessage)
+//            }
+//    )
 
-    loader.getCollect(0).subscribe(
+    loader.getTodoList(0).subscribe(
             {
-                for (article in it.datas) {
-                    println(article)
-                }
+                println(it.doneList)
+                println(it.todoList)
             },
             {
                 val fault = it as Fault
                 println(fault.errorCode.toString() + fault.errorMessage)
             }
     )
-
 }

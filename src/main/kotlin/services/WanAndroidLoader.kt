@@ -51,4 +51,11 @@ class WanAndroidLoader {
         return mService.getCollection(pageCount).map(PayLoadSingle())
     }
 
+    fun addCollect(articleId:Int):Observable<String> {
+        return  mService.addCollect(articleId).map(PayLoadSingle())
+    }
+
+    fun getTodoList(todoType:Int):Observable<TodoData> {
+        return mService.getTodoList(todoType).map(PayLoadSingle())
+    }
 }

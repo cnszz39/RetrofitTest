@@ -9,6 +9,7 @@ import retrofit2.http.Query
 
 interface IWanAndroidBiz {
 
+
     @GET("article/list/{page}/json")
     fun getArticle(@Path("page") page: Int): Observable<BaseResponseSingleData<Article<Article.ArticleBody>>>
 
@@ -41,4 +42,10 @@ interface IWanAndroidBiz {
 
     @GET("lg/collect/list/{page}/json")
     fun getCollection(@Path("page") page: Int): Observable<BaseResponseSingleData<Article<Article.ArticleBody>>>
+
+    @POST("lg/collect/{articleId}/json")
+    fun addCollect(@Path("articleId") articleId: Int): Observable<BaseResponseSingleData<String>>
+
+    @GET("lg/todo/list/{todoType}/json")
+    fun getTodoList(@Path("todoType") todoType:Int):Observable<BaseResponseSingleData<TodoData>>
 }
