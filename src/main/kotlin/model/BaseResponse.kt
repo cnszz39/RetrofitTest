@@ -1,5 +1,6 @@
 package model
 
+
 data class BaseResponseSingleData<out T>(val errorCode: Int,
                                          val errorMsg: String,
                                          val data: T)
@@ -89,7 +90,7 @@ data class TodoData(val doneList: List<Todo>,
 
     data class Todo(val date: Long,
                     val todoList: List<TodoChild>) {
-        
+
         data class TodoChild(val completeDate: Long,
                              val completeDateStr: String,
                              val content: String,

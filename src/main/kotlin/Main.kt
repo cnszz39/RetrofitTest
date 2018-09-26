@@ -5,34 +5,11 @@ fun main(args: Array<String>) {
 
     val loader = WanAndroidLoader()
 
-//    loader.getArticle(1).subscribe(
-//            {
-//                for (article in it.datas) {
-//                    println(article)
-//                }
-//            },
-//            {
-//                val fault = it as Fault
-//                println(fault.errorCode.toString() + fault.errorMessage)
-//            }
-//    )
 
-//    loader.getCollect(0).subscribe(
-//            {
-//                for (article in it.datas) {
-//                    println(article)
-//                }
-//            },
-//            {
-//                val fault = it as Fault
-//                println(fault.errorCode.toString() + fault.errorMessage)
-//            }
-//    )
 
-    loader.getTodoList(0).subscribe(
+    loader.deleteTodo(2634).subscribe(
             {
-                println(it.doneList)
-                println(it.todoList)
+                println(it)
             },
             {
                 val fault = it as Fault
